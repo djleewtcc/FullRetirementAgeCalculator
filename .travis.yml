@@ -1,0 +1,9 @@
+language: python
+python:
+- "3.8"
+- "nightly"
+install:
+- "pip install pytest"
+- "pip install pytest-bdd"
+- "pip install -r requirements.txt"
+script: python -m pytest
