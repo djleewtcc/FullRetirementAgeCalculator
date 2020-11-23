@@ -35,20 +35,3 @@ Feature: Retirement Age
 	  | 1959       | 12          | 2026            |
       | 1960       | 1           | 2027            |
 
-  Scenario Outline: Get error when entering an invalid month
-    Given the valid birth year is set to "<valid_birth_year>"
-    When the invalid birth month is "<invalid_birth_month>"
-    Then an error is raised
-    Examples:
-      | valid_birth_year | invalid_birth_month |
-      | 1979             | 0                   |
-      | 1979             | 13                  |
-
-  Scenario Outline: Get error when entering an invalid month
-    Given the valid birth month is set to "<valid_birth_month>"
-    When the invalid birth year is "<invalid_birth_year>"
-    Then an error is raised
-    Examples:
-      | valid_birth_month | invalid_birth_year |
-      | 7                 | 1899               |
-      | 7                 | 2021               |
