@@ -3,14 +3,14 @@ from pytest_bdd import scenarios, parsers, given, when, then
 from full_retirement_age_calculator import FullRetirementAgeCalculator
 
 
-EXTR_TYPES = {
+EXTRA_TYPES = {
     'Number': int
 }
 
 CONVERTERS = {
-    'initial': int,
-    'some': int,
-    'total': int,
+    'birth_year': int,
+    'birth_month': int,
+    'retirement_year': int,
 }
 
 
