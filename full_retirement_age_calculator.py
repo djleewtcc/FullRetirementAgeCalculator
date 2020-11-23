@@ -112,5 +112,3 @@ def main():
 
         birth_year = input('Enter the year of birth or to exit ')
 
-
-main()
