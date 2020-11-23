@@ -10,11 +10,7 @@ EXTRA_TYPES = {
 CONVERTERS = {
     'birth_year': int,
     'birth_month': int,
-    'retirement_year': int,
-    'valid_birth_year': int,
-    'invalid_birth_month': int,
-    'valid_birth_month': int,
-    'invalid_birth_year': int
+    'retirement_year': int
 }
 
 scenarios('../features/retirement.feature', example_converters=CONVERTERS)
