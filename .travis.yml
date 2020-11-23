@@ -5,8 +5,5 @@ python:
 install:
 - "pip install pytest==4.4.0"
 - "pip install pytest-bdd==3.1.0"
-- "pip install py==1.8.0"
-- "pip install pluggy==0.9.0"
-- "pip install requests"
 - "pip install -r requirements.txt"
 script: python -m pytest
