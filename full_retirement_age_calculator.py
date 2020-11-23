@@ -1,9 +1,16 @@
 import calendar
+from datetime import datetime
 
 
 class FullRetirementAgeCalculator:
 
-    def __init__(self, birth_year=0, birth_month=0):
+    def __init__(self, birth_year=1900, birth_month=1):
+        if birth_month < 1 or birth_month > 12:
+            raise ValueError('The month value must be an integer from 1 to 12.')
+
+        if birth_year < 1900 or birth_year > datetime.now().year:
+            raise ValueError('The year value must be an integer from 1900 to the current year.')
+
         self._birth_year = birth_year
         self._birth_month = birth_month
 
@@ -11,8 +18,6 @@ class FullRetirementAgeCalculator:
         self._retirement_age_month = 0
         self._retirement_year = 0
         self._retirement_month = 0
-
-        self.calculate_retirement_age()
 
     def calculate_retirement_age(self):
         if 1900 <= self._birth_year <= 1937:
@@ -57,14 +62,20 @@ class FullRetirementAgeCalculator:
         self._retirement_month = int(self._birth_month) + int(self._retirement_age_month)
 
         # Adjust year and month of the month value is greater than 12
-        if self._retirement_month > 12:
+        if self._retirement_month >= 12:
             self._retirement_year += self._retirement_month // 12
             self._retirement_month = self._retirement_month % 12
 
     def set_birth_year(self, birth_year):
+        if birth_year < 1900 or birth_year > datetime.now().year:
+            raise ValueError('The year value must be an integer from 1900 to the current year.')
+
         self._birth_year = birth_year
 
     def set_birth_month(self, birth_month):
+        if birth_month < 1 or birth_month > 12:
+            raise ValueError('The month value must be an integer from 1 to 12.')
+
         self._birth_month = birth_month
 
     def get_retirement_age_year(self):
@@ -91,6 +102,8 @@ def main():
 
         retirement = FullRetirementAgeCalculator(int(birth_year), birth_month)
 
+        retirement.calculate_retirement_age()
+
         # Display the results to user
         print('your full retirement age is', retirement.get_retirement_age_year(), 'and',
               retirement.get_retirement_age_month(), 'months')
@@ -100,4 +113,4 @@ def main():
         birth_year = input('Enter the year of birth or to exit ')
 
 
-#main()
+main()
