@@ -54,7 +54,7 @@ class FullRetirementAgeCalculator:
 
         # Calculate the year and month or retirement
         self._retirement_year = self._birth_year + self._retirement_age_year
-        self._retirement_month = self._birth_month + self._retirement_age_month
+        self._retirement_month = int(self._birth_month) + int(self._retirement_age_month)
 
         # Adjust year and month of the month value is greater than 12
         if self._retirement_month > 12:
