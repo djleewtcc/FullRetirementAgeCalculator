@@ -82,7 +82,7 @@ class FullRetirementAgeCalculator:
         return self._retirement_age_year
 
     def get_retirement_age_month(self):
-        return self._retirement_month
+        return self._retirement_age_month
 
     def get_retirement_year(self):
         return self._retirement_year
